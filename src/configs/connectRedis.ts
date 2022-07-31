@@ -1,5 +1,10 @@
 import { createClient } from 'redis';
-const client = createClient();
+import dotenv from 'dotenv';
+dotenv.config();
+const client = createClient({
+    url: process.env.REDIS_ENDPOINT_URI
+}
+);
 client.on('error', (err) => {
     console.log(err);
     console.log("Redis Client Error");
