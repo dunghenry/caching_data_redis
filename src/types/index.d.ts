@@ -1,0 +1,1 @@
+export type IPort = string | number;
