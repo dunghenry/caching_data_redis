@@ -15,7 +15,8 @@ class getDataController {
                 return res.status(200).json(JSON.parse(dataR));
             }
         } catch (error: any) {
-            return res.status(500).json('Internal Server Error');
+            console.log(error);
+            return res.status(500).json(error);
         }
     }
 }
